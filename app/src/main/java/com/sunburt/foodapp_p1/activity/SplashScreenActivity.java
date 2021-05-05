@@ -1,11 +1,12 @@
-package com.sunburt.foodapp_p1;
+package com.sunburt.foodapp_p1.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.sunburt.foodapp_p1.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

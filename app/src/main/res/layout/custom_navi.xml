@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawLayer"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.sunburt.foodapp_p1;
+package com.sunburt.foodapp_p1.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.sunburt.foodapp_p1.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

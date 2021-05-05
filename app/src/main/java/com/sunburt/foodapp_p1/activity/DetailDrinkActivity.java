@@ -1,8 +1,10 @@
-package com.sunburt.foodapp_p1;
+package com.sunburt.foodapp_p1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.sunburt.foodapp_p1.R;
 
 public class DetailDrinkActivity extends AppCompatActivity {
 

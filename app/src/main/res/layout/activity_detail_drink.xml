@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailDrinkActivity"
+    tools:context=".activity.DetailDrinkActivity"
     android:background="@drawable/bg_activity_drink_detail1jpg"
     android:orientation="vertical">
 

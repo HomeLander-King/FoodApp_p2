@@ -9,21 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"></activity>
-        <activity android:name=".DetailDrinkActivity" >
+        <activity android:name=".activity.CartActivity"></activity>
+        <activity android:name=".activity.DetailDrinkActivity" >
 
         </activity>
-        <activity android:name=".DrinkHomeActivity" >
+        <activity android:name=".activity.DrinkHomeActivity" >
 
         </activity>
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
