@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -53,6 +54,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        int i = menuItem.getItemId();
+        Intent intent;
+        switch (i){
+            case R.id.nav_food:
+                intent = new Intent(getApplicationContext(), FoodHomeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_drink:
+                intent = new Intent(getApplicationContext(), DrinkHomeActivity.class);
+                startActivity(intent);
+                break;
+        }
 
         return true;
     }

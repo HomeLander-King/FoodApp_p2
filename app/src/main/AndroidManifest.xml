@@ -9,13 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CartActivity"></activity>
-        <activity android:name=".activity.DetailDrinkActivity" >
-
-        </activity>
-        <activity android:name=".activity.DrinkHomeActivity" >
-
-        </activity>
+        <activity android:name=".activity.DetailFoodActivity"></activity>
+        <activity android:name=".activity.FoodHomeActivity" />
+        <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.DetailDrinkActivity" />
+        <activity android:name=".activity.DrinkHomeActivity" />
         <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
