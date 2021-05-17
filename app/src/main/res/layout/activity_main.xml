@@ -39,7 +39,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/ic_baseline_menu_24" />
+                app:navigationIcon="@drawable/ic_baseline_menu_24"
+                app:menu="@menu/menu_item_home"/>
 
             <TextView
                 android:id="@+id/textView"
@@ -59,8 +60,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/eater"
                 android:text="Enjoy the world"
+                android:textColor="#149710"
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -87,6 +89,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
                 android:background="#A8F3BD">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cv1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -115,6 +118,7 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cv2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -155,6 +159,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 android:background="#D6A2F6">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cv3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.DetailDrinkActivity"
-    android:background="@drawable/bg_activity_drink_detail1jpg"
+    android:background="@drawable/bg_activity_drinkdetail2"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -16,6 +16,7 @@
         android:layout_marginLeft="150dp">
 
         <ImageView
+            android:id="@+id/imgDrink"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/img_lemon_juice" />
@@ -23,6 +24,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Drink name: Lemon Juice"
@@ -42,14 +44,15 @@
         android:textColor="#F5F5F6"
         android:textSize="20dp"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/editDescription"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="75dp"
         android:fontFamily="cursive"
         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai sau khi uong"
         android:textSize="20dp"
-        android:textColor="#5C0606"/>
+        android:textColor="#FFFEFE"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,13 +60,16 @@
         android:text="Region"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="75dp"/>
+        android:layout_marginLeft="75dp"
+        android:textColor="#FBFBFB"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/editRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="South Africa"
-        android:layout_marginLeft="75dp"/>
+        android:layout_marginLeft="75dp"
+        android:textColor="#FBFBFB"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,19 +77,53 @@
         android:text="Price"
         android:layout_marginLeft="75dp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="#FBFBFB"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/editPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="36.345$"
-        android:layout_marginLeft="75dp"/>
+        android:layout_marginLeft="75dp"
+        android:textColor="#FBFBFB"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/custom_btn_update" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/btn_update"
+            android:text="update"
+            android:textColor="#A7EE00" />
+
+        <Button
+            android:id="@+id/btnBackHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/btn_back_home"
+            android:text="home page"
+            android:textColor="#FCFCFD" />
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add to cart"
+            android:background="@drawable/bg_btn_addcart"
+            android:textColor="#CADDF4"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="35dp"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>

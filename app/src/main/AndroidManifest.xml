@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sunburt.foodapp_p1">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DetailFoodActivity"></activity>
+        <activity android:name=".activity.OrderFoodActivity"></activity>
+        <activity android:name=".activity.OrderActivity" />
+        <activity android:name=".activity.DetailFoodActivity" />
         <activity android:name=".activity.FoodHomeActivity" />
         <activity android:name=".activity.CartActivity" />
         <activity android:name=".activity.DetailDrinkActivity" />
@@ -22,6 +27,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+
+        <provider
+            android:name=".database.OrderProvider"
+            android:authorities="com.sunburt.foodapp_p1"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

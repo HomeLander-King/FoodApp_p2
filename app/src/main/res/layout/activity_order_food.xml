@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderFoodActivity"
+    android:padding="10dp"
+    android:background="#BF87DD">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="370dp"
+        android:layout_height="320dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cv1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_activity_fooddetail">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/imgFood"
+                android:src="@drawable/food_bun"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgFood"
+                android:text="Food name"
+                android:textColor="#FDFDFD"
+                android:textSize="30sp"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/aclonica"
+                android:id="@+id/txtName"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$14"
+                android:textColor="#FAF9FB"
+                android:id="@+id/txtPrice"
+                android:layout_alignRight="@id/txtName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="60dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_below="@id/imgFood"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:id="@+id/cv2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/cv1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#91DBF8">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="130dp"
+                android:id="@+id/btnPlus"
+                android:background="@drawable/btn_plus"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/txtOrderNum"
+                android:textSize="28dp"
+                android:layout_toRightOf="@id/btnPlus" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/btnSubstract"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/txtOrderNum"
+                android:background="@drawable/btn_substract"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/txtDescription"
+                android:textStyle="italic"
+                android:textSize="15sp"
+                android:layout_below="@id/txtOrderNum"
+                android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai sau khi uong"/>
+
+            <ImageButton
+                android:id="@+id/btnAdd"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/btn_addcart2"
+                android:layout_below="@id/txtDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

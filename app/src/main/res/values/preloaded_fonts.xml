@@ -2,5 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
+        <item>@font/creepster</item>
+        <item>@font/delius_swash_caps</item>
+        <item>@font/eater</item>
+        <item>@font/macondo_swash_caps</item>
     </array>
 </resources>

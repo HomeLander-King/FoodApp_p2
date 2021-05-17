@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/img_drink">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:id="@+id/revDrink"/>
+
+    <!--
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+     <LinearLayout
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:background="@drawable/img_drink"
         android:orientation="vertical">
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,14 +31,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp">
-            <!--
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fabSize="normal" />
-                -->
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -60,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai
-                            sau khi uong"/>
+                                sau khi uong"/>
 
 
                 </LinearLayout>
@@ -79,14 +81,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp">
-            <!--
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fabSize="normal" />
-                -->
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -118,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai
-                            sau khi uong"/>
+                                sau khi uong"/>
 
 
                 </LinearLayout>
@@ -137,14 +131,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp">
-            <!--
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fabSize="normal" />
-                -->
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -176,7 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai
-                            sau khi uong"/>
+                                sau khi uong"/>
 
 
                 </LinearLayout>
@@ -195,14 +181,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp">
-            <!--
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fabSize="normal" />
-                -->
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -234,7 +212,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai
-                            sau khi uong"/>
+                                sau khi uong"/>
 
 
                 </LinearLayout>
@@ -253,14 +231,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp">
-            <!--
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_edit_24"
-                app:fabSize="normal" />
-                -->
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -292,7 +262,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="la nuoc trai cay lam tu qua chanh, mang lai cam giac sang khoai
-                            sau khi uong"/>
+                                sau khi uong"/>
 
 
                 </LinearLayout>
@@ -302,12 +272,18 @@
 
         </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btm_nav_drink"
-            app:menu="@menu/menu_item_dinkhome"/>
 
     </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+    -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btm_nav_drink"
+        app:menu="@menu/menu_item_drinkhome"
+        android:background="#9F64F3"/>
+
+</RelativeLayout>
