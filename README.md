@@ -3,4 +3,6 @@ Food App version 1
 
 Food App With CRUD and cart
 
-User not only can see menu of drinks and foods, update this but also add item in cart and chekout 
+User not only can see menu of drinks and foods, update this but also add item in cart and chekout
+
+Will be update suggestting food feature by temperature
