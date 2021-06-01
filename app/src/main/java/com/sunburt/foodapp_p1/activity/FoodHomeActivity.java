@@ -34,13 +34,8 @@ public class FoodHomeActivity extends AppCompatActivity {
 
         getControls();
 
-        // display all food
-        foods = db.getAllFood();
-        adapter = new FoodHomeAdapter(FoodHomeActivity.this, foods);
-        revFood.setAdapter(adapter);
-        revFood.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
         //addData();
+        btmNavigationFood.setSelectedItemId(R.id.nav_food);
 
         btmNavigationFood.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -134,5 +129,10 @@ public class FoodHomeActivity extends AppCompatActivity {
         revFood = findViewById(R.id.revFood);
         btmNavigationFood = findViewById(R.id.btm_nav_food);
         db = new DBHelper(this);
+        // display all food
+        foods = db.getAllFood();
+        adapter = new FoodHomeAdapter(FoodHomeActivity.this, foods);
+        revFood.setAdapter(adapter);
+        revFood.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 }

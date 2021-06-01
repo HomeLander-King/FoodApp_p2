@@ -33,8 +33,6 @@ public class OrderActivity extends AppCompatActivity  {
     private ImageButton btnPlus, btnSubstract, btnAdd;
     private int orderNumber;
     private DBHelper db;
-    public Uri mCurrentCartUri;
-    boolean hasAllRequiredValues = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +79,6 @@ public class OrderActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent intent =  new Intent(getApplicationContext(), CartActivity.class);
-                /**
-                intent.putExtra("order_name", txtName.getText().toString());
-                intent.putExtra("order_price", Float.parseFloat(txtPrice.getText().toString()));
-                intent.putExtra("order_img", src);
-                intent.putExtra("order_number", Integer.parseInt(txtOrderNum.getText().toString()));
-                 **/
                 boolean checkAddOrder = db.addNewOrder(txtName.getText().toString(),
                         src, Integer.parseInt(txtOrderNum.getText().toString()),
                         Float.parseFloat(txtPrice.getText().toString()));

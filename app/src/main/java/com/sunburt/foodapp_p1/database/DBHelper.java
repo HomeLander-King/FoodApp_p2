@@ -36,6 +36,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
         MyDB.execSQL("CREATE TABLE tbl_order(order_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "order_name TEXT, order_img INT,order_number INT, order_price FLOAT)");
+
+        MyDB.execSQL("CREATE TABLE tbl_user(user_id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT," +
+                "password TEXT)");
     }
 
     @Override
@@ -43,6 +46,7 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("DROP TABLE IF EXISTS tbl_food");
         MyDB.execSQL("DROP TABLE IF EXISTS tbl_drink");
         MyDB.execSQL("DROP TABLE IF EXISTS tbl_order");
+        MyDB.execSQL("DROP TABLE IF EXISTS tbl_user ");
     }
 
     // Add new food
@@ -90,6 +94,31 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
+    }
+
+    // Add new user
+    public boolean addNewUser(String username, String password, String rePassword){
+        SQLiteDatabase MyDB =this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password",password);
+        if (password.equals(rePassword)) {
+            long result = MyDB.insert("tbl_user", null, contentValues);
+            if (result == -1)
+                return false;
+        }
+        return true;
+    }
+
+    // Check user
+    public Boolean checkUser(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM tbl_user WHERE username = ? and " +
+                "password = ?", new String[]{username,password});
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
     }
 
     // Get All Food
@@ -154,6 +183,55 @@ public class DBHelper extends SQLiteOpenHelper {
         return price;
     }
 
+    // Get food by region (approximately) -  contain both lower and upper case
+    public List<Food> getFoodByRegion(String region){
+        List<Food> foods = new ArrayList<>();
+        SQLiteDatabase MyDB = getWritableDatabase();
+//        Cursor cursor = MyDB.rawQuery("SELECT food_name, food_imgsrc, food_region, food_description," +
+//                " food_price " +
+//                "FROM tbl_food WHERE food_region = ?", new String[]{region});
+        String[] projections = {"food_name, food_imgsrc, food_region, food_description,food_price"};
+        String selection = "food_region like ?";
+        String[] selection_args = new String[]{"%"+region+"%"};
+        Cursor cursor = MyDB.query("tbl_food", projections, selection, selection_args,
+                null, null, null);
+        while (cursor.moveToNext()){
+            String name = cursor.getString(0);
+            int imgsrc = cursor.getInt(1);
+            String food_region = cursor.getString(2);
+            String description = cursor.getString(3);
+            float price = cursor.getFloat(4);
+
+            Food food = new Food(name, imgsrc, food_region, description, price);
+            foods.add(food);
+        }
+        return foods;
+    }
+
+    // Get drink by region (approximately) - contain both lower and upper case
+    public List<Drink> getDrinkByRegion(String region){
+        List<Drink> drinks = new ArrayList<>();
+        SQLiteDatabase MyDB = getWritableDatabase();
+//        Cursor cursor = MyDB.rawQuery("SELECT drink_name, drink_region, drink_price FROM tbl_drink WHERE\n" +
+//                "drink_region like '?%'",new String[]{region});
+        String[] projections = {"drink_name, drink_imgsrc, drink_region, drink_description, drink_price"};
+        String selection = "drink_region LIKE ?";
+        String[] selection_args = new String[]{"%"+region+"%"};
+        Cursor cursor = MyDB.query("tbl_drink", projections, selection, selection_args,
+                null, null, null);
+        while (cursor.moveToNext()){
+            String name = cursor.getString(0);
+            int imgsrc = cursor.getInt(1);
+            String drink_region = cursor.getString(2);
+            String description = cursor.getString(3);
+            float price = cursor.getFloat(4);
+
+            Drink drink = new Drink(name, imgsrc, drink_region, description, price);
+            drinks.add(drink);
+        }
+        return drinks;
+    }
+
     // Update food
     public boolean updateFood(String name, int imgsrc, String region, String description, float price){
         SQLiteDatabase MyDB = getWritableDatabase();
@@ -169,7 +247,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     //Update drink
-    public boolean updateDrink(String name, int imgsrc, String region, String description, float price){
+    public boolean updateDrink(String name, int imgsrc, String region, String description,  float price){
         SQLiteDatabase MyDB = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("drink_name", name);

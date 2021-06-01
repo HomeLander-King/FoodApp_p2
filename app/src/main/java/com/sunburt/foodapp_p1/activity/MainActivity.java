@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navView;
     Toolbar toolbar;
-    CardView cv1, cv2, cv3;
+    CardView cv1, cv2, cv3,cv4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+
+        cv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getControls(){
@@ -80,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         cv1 = (CardView) findViewById(R.id.cv1);
         cv2 = (CardView) findViewById(R.id.cv2);
         cv3 = (CardView) findViewById(R.id.cv3);
+        cv4 = (CardView) findViewById(R.id.cv4);
     }
 
     @Override

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_activity_search1"
+        android:orientation="vertical"
+        tools:context=".activity.SearchActivity">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editSearch"
+                android:layout_width="329dp"
+                android:layout_height="wrap_content"
+                android:hint="Type the region name you like"
+                android:textColor="#FFFEFF" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Temperature of anywhere"
+            android:textColor="#FAFAFB"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:text="Food Menu"
+            android:textColor="#FCFDFD" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/revSearchFood"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/revResFood"
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:text="Drink Menu"
+            android:textColor="#FFEB3B" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/revSearchDrink"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/revResDrink"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -35,16 +35,11 @@ public class DrinkHomeActivity extends AppCompatActivity {
 
         getControls();
 
-        // display all drinks
-
-        drinks = db.getAllDrink();
-        adapter = new DrinkHomeAdapter(DrinkHomeActivity.this, drinks);
-        revDrink.setAdapter(adapter);
-        revDrink.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
          //addData();
 
         // listen handle
+
+        btmNavigationDrink.setSelectedItemId(R.id.nav_drink);
 
         btmNavigationDrink.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -133,6 +128,9 @@ public class DrinkHomeActivity extends AppCompatActivity {
     private void getControls() {
         revDrink = (RecyclerView) findViewById(R.id.revDrink);
         btmNavigationDrink = (BottomNavigationView) findViewById(R.id.btm_nav_drink);
-        db = new DBHelper(this);
+        db = new DBHelper(this);drinks = db.getAllDrink();
+        adapter = new DrinkHomeAdapter(DrinkHomeActivity.this, drinks);
+        revDrink.setAdapter(adapter);
+        revDrink.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 }
